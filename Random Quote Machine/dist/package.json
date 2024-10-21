@@ -1,0 +1,23 @@
+{
+  "name": "dist",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "random",
+    "random quote",
+    "quote",
+    "generator",
+    "random quote generator"
+  ],
+  "author": "hussain ahmed",
+  "license": "ISC",
+  "description": "this is a random quote generator",
+  "dependencies": {
+    "dist": "file:",
+    "dotenv": "^16.4.5"
+  }
+}
