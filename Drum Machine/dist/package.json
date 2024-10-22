@@ -1,5 +1,5 @@
 {
-  "name": "dist",
+  "name": "drum-machine",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
@@ -8,16 +8,17 @@
     "start": "node server.js"
   },
   "keywords": [
-    "Markdown Previewer",
-    "Markdown",
-    "Previewer"
+    "drum machine",
+    "drum",
+    "machine"
   ],
   "author": "hussain ahmed",
   "license": "ISC",
-  "description": "this is a simple Markdown Previewer project",
+  "description": "this is a simple drum machine project",
   "dependencies": {
     "dist": "file:",
     "dotenv": "^16.4.5",
+    "drum-machine": "file:",
     "express": "^4.21.1"
   }
 }
