@@ -5,9 +5,13 @@ function App() {
   const defaultSessionDuration = 25;
   const defaultBreakDuration = 5;
 
-  const [sessionDuration, setSessionDuration] = useState(defaultSessionDuration);
+  const [sessionDuration, setSessionDuration] = useState(
+    defaultSessionDuration
+  );
   const [breakDuration, setBreakDuration] = useState(defaultBreakDuration);
-  const [currentDuration, setCurrentDuration] = useState(defaultSessionDuration * 60);
+  const [currentDuration, setCurrentDuration] = useState(
+    defaultSessionDuration * 60
+  );
   const [isSession, setIsSession] = useState(true);
   const [isActive, setIsActive] = useState(false);
   const [display, setDisplay] = useState("25:00");
@@ -16,7 +20,9 @@ function App() {
   useEffect(() => {
     const minutes = Math.floor(currentDuration / 60);
     const seconds = currentDuration % 60;
-    setDisplay(`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`);
+    setDisplay(
+      `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`
+    );
   }, [currentDuration]);
 
   // Timer interval logic
@@ -89,35 +95,48 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <div className="title">25 + 5 Clock</div>
-      <div className="length-control">
-        <div id="break-label">Break Length</div>
-        <div className="btn-container">
-          <button id="break-increment" onClick={incrementBreak}>+</button>
-          <div>{breakDuration}</div>
-          <button id="break-decrement" onClick={decrementBreak}>-</button>
+    <>
+      <div className="container">
+        <div className="title">25 + 5 Clock</div>
+        <div className="length-control">
+          <div id="break-label">Break Length</div>
+          <div className="btn-container">
+            <button id="break-increment" onClick={incrementBreak}>
+              +
+            </button>
+            <div>{breakDuration}</div>
+            <button id="break-decrement" onClick={decrementBreak}>
+              -
+            </button>
+          </div>
+        </div>
+        <div className="length-control">
+          <div id="session-label">Session Length</div>
+          <div className="btn-container">
+            <button id="session-increment" onClick={incrementSession}>
+              +
+            </button>
+            <div>{sessionDuration}</div>
+            <button id="session-decrement" onClick={decrementSession}>
+              -
+            </button>
+          </div>
+        </div>
+        <div className="timer">
+          <div id="timer-label">{isSession ? "Session" : "Break"}</div>
+          <div id="timer-left">{display}</div>
+          <div className="timer-control">
+            <button id="start_stop" onClick={toggleTimer}>
+              {isActive ? "Pause" : "Start"}
+            </button>
+            <button id="reset" onClick={resetTimer}>
+              Reset
+            </button>
+          </div>
         </div>
       </div>
-      <div className="length-control">
-        <div id="session-label">Session Length</div>
-        <div className="btn-container">
-          <button id="session-increment" onClick={incrementSession}>+</button>
-          <div>{sessionDuration}</div>
-          <button id="session-decrement" onClick={decrementSession}>-</button>
-        </div>
-      </div>
-      <div className="timer">
-        <div id="timer-label">{isSession ? "Session" : "Break"}</div>
-        <div id="timer-left">{display}</div>
-        <div className="timer-control">
-          <button id="start_stop" onClick={toggleTimer}>
-            {isActive ? "Pause" : "Start"}
-          </button>
-          <button id="reset" onClick={resetTimer}>Reset</button>
-        </div>
-      </div>
-    </div>
+      <div id="author">by hussain</div>
+    </>
   );
 }
 

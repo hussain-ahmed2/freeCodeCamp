@@ -7,13 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
-  "keywords": [
-    "25 + 5 Clock",
-    "Clock"
-  ],
   "author": "hussain ahmed",
   "license": "ISC",
-  "description": "this is a simple 25 + 5 clock",
+  "description": "this is a 25 + 5 clock",
   "dependencies": {
     "dist": "file:",
     "dotenv": "^16.4.5",

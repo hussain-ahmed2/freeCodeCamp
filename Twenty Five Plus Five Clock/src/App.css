@@ -80,3 +80,8 @@ button:hover {
 .timer-control button {
   margin: 0 15px;
 }
+
+#author {
+  padding: 0.5rem;
+  text-align: center;
+}
